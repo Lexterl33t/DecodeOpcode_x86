@@ -20,10 +20,40 @@ class OpcodeDecode
 
     private
         @@opcode_table = [
-            {'Instruction' => 'push ebp', 'Opcode' => 0x55, 'r_mod' => 0x0}, # MOD R/M disable
+            # R/M ENABLE
             {'Instruction' => 'mov', 'Opcode' => 0x89, 'r_mod' => 0x1}, # MOD R/M enable
             {'Instruction' => 'add', 'Opcode' => 0x01, 'r_mod' => 0x1}, # MOD R/M enable
+            # R/M DISABLE
+                # [ OTHER ]
             {'Instruction' => 'mov eax', 'Opcode' => 0xb8, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'add eax', 'Opcode' => 0x05, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'adc eax', 'Opcode' => 0x14, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'or eax', 'Opcode' => 0x0d, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'and eax', 'Opcode' => 0x25, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'xor eax', 'Opcode' => 0x35, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'sbb eax', 'Opcode' => 0x1d, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'sub eax', 'Opcode' => 0x2d, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'cmp eax', 'Opcode' => 0x3d, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push', 'Opcode' => 0x68, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push', 'Opcode' => 0x6a, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jo', 'Opcode' => 0x70, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jno', 'Opcode' => 0x71, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jb', 'Opcode' => 0x72, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jnb', 'Opcode' => 0x73, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jz', 'Opcode' => 0x74, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jnz', 'Opcode' => 0x75, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jbe', 'Opcode' => 0x76, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'ja', 'Opcode' => 0x77, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'js', 'Opcode' => 0x78, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jns', 'Opcode' => 0x79, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jp', 'Opcode' => 0x7a, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jnp', 'Opcode' => 0x7b, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jl', 'Opcode' => 0x7c, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jnl', 'Opcode' => 0x7d, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jle', 'Opcode' => 0x7e, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jnle', 'Opcode' => 0x7f, 'r_mod' => 0x0}, # MOD R/M disable
+                # [ LENGTH 1 ]
+            {'Instruction' => 'push ebp', 'Opcode' => 0x55, 'r_mod' => 0x0}, # MOD R/M disable
         ]
         
         @@opcode_x86_rm = {'MOD' => [
