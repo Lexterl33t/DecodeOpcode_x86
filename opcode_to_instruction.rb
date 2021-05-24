@@ -23,12 +23,86 @@ class OpcodeDecode
             {'Instruction' => 'push ebp', 'Opcode' => 0x55, 'r_mod' => 0x0}, # MOD R/M disable
             {'Instruction' => 'mov', 'Opcode' => 0x89, 'r_mod' => 0x1}, # MOD R/M enable
             {'Instruction' => 'add', 'Opcode' => 0x01, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov eax', 'Opcode' => 0xb8, 'r_mod' => 0x0}, # MOD R/M disable
         ]
         
         @@opcode_x86_rm = {'MOD' => [
+            # 11 (register addressing mode)
             0b11 => [
                 {0xe5 => {'REG' => "esp", "R/M" => "ebp"}},
-                {0xd0 => {'REG' => "edx", "R/M" => "eax"}}
+                {0xd0 => {'REG' => "edx", "R/M" => "eax"}},
+                # EAX
+                {0xc0 => {'REG' => "eax", "R/M" => "eax"}},
+                {0xc1 => {'REG' => "eax", "R/M" => "ecx"}},
+                {0xc2 => {'REG' => "eax", "R/M" => "edx"}},
+                {0xc3 => {'REG' => "eax", "R/M" => "ebx"}},
+                {0xc4 => {'REG' => "eax", "R/M" => "esp"}},
+                {0xc5 => {'REG' => "eax", "R/M" => "ebp"}},
+                {0xc6 => {'REG' => "eax", "R/M" => "esi"}},
+                {0xc7 => {'REG' => "eax", "R/M" => "edi"}},
+                # ECX
+                {0xc8 => {'REG' => "ecx", "R/M" => "eax"}},
+                {0xc9 => {'REG' => "ecx", "R/M" => "ecx"}},
+                {0xca => {'REG' => "ecx", "R/M" => "edx"}},
+                {0xcb => {'REG' => "ecx", "R/M" => "ebx"}},
+                {0xcc => {'REG' => "ecx", "R/M" => "esp"}},
+                {0xcd => {'REG' => "ecx", "R/M" => "ebp"}},
+                {0xce => {'REG' => "ecx", "R/M" => "esi"}},
+                {0xcf => {'REG' => "eax", "R/M" => "edi"}},
+                # EDX
+                {0xd0 => {'REG' => "edx", "R/M" => "eax"}},
+                {0xd1 => {'REG' => "edx", "R/M" => "ecx"}},
+                {0xd2 => {'REG' => "edx", "R/M" => "edx"}},
+                {0xd3 => {'REG' => "edx", "R/M" => "ebx"}},
+                {0xd4 => {'REG' => "edx", "R/M" => "esp"}},
+                {0xd5 => {'REG' => "edx", "R/M" => "ebp"}},
+                {0xd6 => {'REG' => "edx", "R/M" => "esi"}},
+                {0xd7 => {'REG' => "edx", "R/M" => "edi"}},
+                # EBX
+                {0xd8 => {'REG' => "ebx", "R/M" => "eax"}},
+                {0xd9 => {'REG' => "ebx", "R/M" => "ecx"}},
+                {0xda => {'REG' => "ebx", "R/M" => "edx"}},
+                {0xdb => {'REG' => "ebx", "R/M" => "ebx"}},
+                {0xdc => {'REG' => "ebx", "R/M" => "esp"}},
+                {0xdd => {'REG' => "ebx", "R/M" => "ebp"}},
+                {0xde => {'REG' => "ebx", "R/M" => "esi"}},
+                {0xdf => {'REG' => "ebx", "R/M" => "edi"}},
+                # ESP
+                {0xe0 => {'REG' => "esp", "R/M" => "eax"}},
+                {0xe1 => {'REG' => "esp", "R/M" => "ecx"}},
+                {0xe2 => {'REG' => "esp", "R/M" => "edx"}},
+                {0xe3 => {'REG' => "esp", "R/M" => "ebx"}},
+                {0xe4 => {'REG' => "esp", "R/M" => "esp"}},
+                {0xe5 => {'REG' => "esp", "R/M" => "ebp"}},
+                {0xe6 => {'REG' => "esp", "R/M" => "esi"}},
+                {0xe7 => {'REG' => "esp", "R/M" => "edi"}},
+                # EBP
+                {0xe8 => {'REG' => "ebp", "R/M" => "eax"}},
+                {0xe9 => {'REG' => "ebp", "R/M" => "ecx"}},
+                {0xea => {'REG' => "ebp", "R/M" => "edx"}},
+                {0xeb => {'REG' => "ebp", "R/M" => "ebx"}},
+                {0xec => {'REG' => "ebp", "R/M" => "esp"}},
+                {0xed => {'REG' => "ebp", "R/M" => "ebp"}},
+                {0xee => {'REG' => "ebp", "R/M" => "esi"}},
+                {0xef => {'REG' => "ebp", "R/M" => "edi"}},
+                # ESI
+                {0xf0 => {'REG' => "esi", "R/M" => "eax"}},
+                {0xf1 => {'REG' => "esi", "R/M" => "ecx"}},
+                {0xf2 => {'REG' => "esi", "R/M" => "edx"}},
+                {0xf3 => {'REG' => "esi", "R/M" => "ebx"}},
+                {0xf4 => {'REG' => "esi", "R/M" => "esp"}},
+                {0xf5 => {'REG' => "esi", "R/M" => "ebp"}},
+                {0xf6 => {'REG' => "esi", "R/M" => "esi"}},
+                {0xf7 => {'REG' => "esi", "R/M" => "edi"}},
+                # EDI
+                {0xf8 => {'REG' => "edi", "R/M" => "eax"}},
+                {0xf9 => {'REG' => "edi", "R/M" => "ecx"}},
+                {0xfa => {'REG' => "edi", "R/M" => "edx"}},
+                {0xfb => {'REG' => "edi", "R/M" => "ebx"}},
+                {0xfc => {'REG' => "edi", "R/M" => "esp"}},
+                {0xfd => {'REG' => "edi", "R/M" => "ebp"}},
+                {0xfe => {'REG' => "edi", "R/M" => "esi"}},
+                {0xff => {'REG' => "edi", "R/M" => "edi"}},
             ]
 =begin
             00 => [
@@ -81,7 +155,12 @@ class OpcodeDecode
                 regex_field_rm["%REG%"] = get_column_mode(mod_value, @opcode_array[1])['REG']
                 return regex_field_rm
             else
-                return column_opcode_instruction['Instruction']
+                if @opcode_array.length == 1
+                    return column_opcode_instruction['Instruction']
+                else
+                    puts "here"
+                    return "#{column_opcode_instruction['Instruction']}, #{@opcode_array[1..-1]}"
+                end
             end
         end
     end
