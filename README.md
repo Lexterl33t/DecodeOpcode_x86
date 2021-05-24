@@ -41,3 +41,9 @@ puts opcode_decode.convert_opcode_to_instruction
 # => push ebp
 ```
 
+```ruby
+opcode_decode = OpcodeDecode.new([0xb8, 0x10], iarch=32)
+
+puts opcode_decode.convert_opcode_to_instruction
+# => mov eax, 10
+```
