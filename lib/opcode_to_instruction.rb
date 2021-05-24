@@ -23,6 +23,56 @@ class OpcodeDecode
             # R/M ENABLE
             {'Instruction' => 'mov', 'Opcode' => 0x89, 'r_mod' => 0x1}, # MOD R/M enable
             {'Instruction' => 'add', 'Opcode' => 0x01, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'add', 'Opcode' => 0x00, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'add', 'Opcode' => 0x02, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'add', 'Opcode' => 0x03, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'adc', 'Opcode' => 0x10, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'adc', 'Opcode' => 0x11, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'adc', 'Opcode' => 0x12, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'adc', 'Opcode' => 0x13, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'and', 'Opcode' => 0x20, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'and', 'Opcode' => 0x21, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'and', 'Opcode' => 0x22, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'and', 'Opcode' => 0x23, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'xor', 'Opcode' => 0x30, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'xor', 'Opcode' => 0x31, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'xor', 'Opcode' => 0x32, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'xor', 'Opcode' => 0x33, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'or', 'Opcode' => 0x08, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'or', 'Opcode' => 0x09, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'or', 'Opcode' => 0x0a, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'or', 'Opcode' => 0x0b, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sbb', 'Opcode' => 0x18, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sbb', 'Opcode' => 0x19, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sbb', 'Opcode' => 0x1a, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sbb', 'Opcode' => 0x1b, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sub', 'Opcode' => 0x28, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sub', 'Opcode' => 0x29, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sub', 'Opcode' => 0x2a, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sub', 'Opcode' => 0x2b, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'cmp', 'Opcode' => 0x38, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'cmp', 'Opcode' => 0x39, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'cmp', 'Opcode' => 0x3a, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'cmp', 'Opcode' => 0x3b, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'arpl', 'Opcode' => 0x63, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'imul', 'Opcode' => 0x69, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'imul', 'Opcode' => 0x6b, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'add', 'Opcode' => 0x80, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'add', 'Opcode' => 0x81, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sub', 'Opcode' => 0x82, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sub', 'Opcode' => 0x83, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'test', 'Opcode' => 0x84, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'test', 'Opcode' => 0x85, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'xchg', 'Opcode' => 0x86, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'xchg', 'Opcode' => 0x87, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0x88, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0x8a, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0x8b, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0x8c, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0x8e, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'pop', 'Opcode' => 0x8f, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0xc6, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0xc7, 'r_mod' => 0x1}, # MOD R/M enable
             # R/M DISABLE
                 # [ OTHER ]
             {'Instruction' => 'mov eax', 'Opcode' => 0xb8, 'r_mod' => 0x0}, # MOD R/M disable
@@ -52,8 +102,36 @@ class OpcodeDecode
             {'Instruction' => 'jnl', 'Opcode' => 0x7d, 'r_mod' => 0x0}, # MOD R/M disable
             {'Instruction' => 'jle', 'Opcode' => 0x7e, 'r_mod' => 0x0}, # MOD R/M disable
             {'Instruction' => 'jnle', 'Opcode' => 0x7f, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'mov eax', 'Opcode' => 0xa1, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'mov eax', 'Opcode' => 0xa3, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'mov eax', 'Opcode' => 0xb8, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'mov ecx', 'Opcode' => 0xb9, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'mov edx', 'Opcode' => 0xba, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'mov ebx', 'Opcode' => 0xbb, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'mov esp', 'Opcode' => 0xbc, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'mov ebp', 'Opcode' => 0xbd, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'mov esi', 'Opcode' => 0xbe, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'mov edi', 'Opcode' => 0xbf, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'retn', 'Opcode' => 0xc2, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'retf', 'Opcode' => 0xca, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'int', 'Opcode' => 0xcd, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'aam', 'Opcode' => 0xd4, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'aad', 'Opcode' => 0xd5, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'loopnz', 'Opcode' => 0xe0, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'loopz', 'Opcode' => 0xe1, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'loop', 'Opcode' => 0xe2, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jcxz', 'Opcode' => 0xe3, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'in eax', 'Opcode' => 0xe5, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'out eax', 'Opcode' => 0xe7, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'call', 'Opcode' => 0xe8, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jmp', 'Opcode' => 0xe9, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jmp', 'Opcode' => 0xea, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jmp', 'Opcode' => 0xeb, 'r_mod' => 0x0}, # MOD R/M disable
                 # [ LENGTH 1 ]
             {'Instruction' => 'push ebp', 'Opcode' => 0x55, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'retn', 'Opcode' => 0xc3, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'leave', 'Opcode' => 0xc9, 'r_mod' => 0x0}, # MOD R/M disable
+
         ]
         
         @@opcode_x86_rm = {'MOD' => [
