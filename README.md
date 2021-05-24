@@ -9,7 +9,7 @@ I implemented the MOD register addressing mode (11)
 i have just implemented 32 bits table
 Here is a table of the different modes
 
-<img src="register_mod.png">
+<img src="screenshots/register_mod.png">
 
 Opcode example using register adressing mode
 
