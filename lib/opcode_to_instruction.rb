@@ -21,155 +21,155 @@ class OpcodeDecode
     private
         @@opcode_table = [
             # R/M ENABLE
-            {'Instruction' => 'mov', 'Opcode' => 0x89, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'add', 'Opcode' => 0x01, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'add', 'Opcode' => 0x00, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'add', 'Opcode' => 0x02, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'add', 'Opcode' => 0x03, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'adc', 'Opcode' => 0x10, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'adc', 'Opcode' => 0x11, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'adc', 'Opcode' => 0x12, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'adc', 'Opcode' => 0x13, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'and', 'Opcode' => 0x20, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'and', 'Opcode' => 0x21, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'and', 'Opcode' => 0x22, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'and', 'Opcode' => 0x23, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'xor', 'Opcode' => 0x30, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'xor', 'Opcode' => 0x31, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'xor', 'Opcode' => 0x32, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'xor', 'Opcode' => 0x33, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'or', 'Opcode' => 0x08, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'or', 'Opcode' => 0x09, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'or', 'Opcode' => 0x0a, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'or', 'Opcode' => 0x0b, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'sbb', 'Opcode' => 0x18, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'sbb', 'Opcode' => 0x19, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'sbb', 'Opcode' => 0x1a, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'sbb', 'Opcode' => 0x1b, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'sub', 'Opcode' => 0x28, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'sub', 'Opcode' => 0x29, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'sub', 'Opcode' => 0x2a, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'sub', 'Opcode' => 0x2b, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'cmp', 'Opcode' => 0x38, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'cmp', 'Opcode' => 0x39, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'cmp', 'Opcode' => 0x3a, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'cmp', 'Opcode' => 0x3b, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'arpl', 'Opcode' => 0x63, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'imul', 'Opcode' => 0x69, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'imul', 'Opcode' => 0x6b, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'add', 'Opcode' => 0x80, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'add', 'Opcode' => 0x81, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'sub', 'Opcode' => 0x82, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'sub', 'Opcode' => 0x83, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'test', 'Opcode' => 0x84, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'test', 'Opcode' => 0x85, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'xchg', 'Opcode' => 0x86, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'xchg', 'Opcode' => 0x87, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'mov', 'Opcode' => 0x88, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'mov', 'Opcode' => 0x8a, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'mov', 'Opcode' => 0x8b, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'mov', 'Opcode' => 0x8c, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'mov', 'Opcode' => 0x8e, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'pop', 'Opcode' => 0x8f, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'mov', 'Opcode' => 0xc6, 'r_mod' => 0x1}, # MOD R/M enable
-            {'Instruction' => 'mov', 'Opcode' => 0xc7, 'r_mod' => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0x89, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'add', 'Opcode' => 0x01, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'add', 'Opcode' => 0x00, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'add', 'Opcode' => 0x02, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'add', 'Opcode' => 0x03, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'adc', 'Opcode' => 0x10, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'adc', 'Opcode' => 0x11, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'adc', 'Opcode' => 0x12, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'adc', 'Opcode' => 0x13, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'and', 'Opcode' => 0x20, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'and', 'Opcode' => 0x21, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'and', 'Opcode' => 0x22, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'and', 'Opcode' => 0x23, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'xor', 'Opcode' => 0x30, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'xor', 'Opcode' => 0x31, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'xor', 'Opcode' => 0x32, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'xor', 'Opcode' => 0x33, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'or', 'Opcode' => 0x08, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'or', 'Opcode' => 0x09, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'or', 'Opcode' => 0x0a, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'or', 'Opcode' => 0x0b, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sbb', 'Opcode' => 0x18, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sbb', 'Opcode' => 0x19, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sbb', 'Opcode' => 0x1a, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sbb', 'Opcode' => 0x1b, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sub', 'Opcode' => 0x28, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sub', 'Opcode' => 0x29, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sub', 'Opcode' => 0x2a, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sub', 'Opcode' => 0x2b, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'cmp', 'Opcode' => 0x38, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'cmp', 'Opcode' => 0x39, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'cmp', 'Opcode' => 0x3a, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'cmp', 'Opcode' => 0x3b, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'arpl', 'Opcode' => 0x63, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'imul', 'Opcode' => 0x69, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'imul', 'Opcode' => 0x6b, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'add', 'Opcode' => 0x80, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'add', 'Opcode' => 0x81, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sub', 'Opcode' => 0x82, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'sub', 'Opcode' => 0x83, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'test', 'Opcode' => 0x84, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'test', 'Opcode' => 0x85, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'xchg', 'Opcode' => 0x86, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'xchg', 'Opcode' => 0x87, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0x88, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0x8a, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0x8b, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0x8c, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0x8e, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'pop', 'Opcode' => 0x8f, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0xc6, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
+            {'Instruction' => 'mov', 'Opcode' => 0xc7, 'r_mod' => 0x1, "src" => 0x1}, # MOD R/M enable
             # R/M DISABLE
                 # [ OTHER ]
-            {'Instruction' => 'mov eax', 'Opcode' => 0xb8, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'add eax', 'Opcode' => 0x05, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'adc eax', 'Opcode' => 0x14, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'or eax', 'Opcode' => 0x0d, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'and eax', 'Opcode' => 0x25, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'xor eax', 'Opcode' => 0x35, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'sbb eax', 'Opcode' => 0x1d, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'sub eax', 'Opcode' => 0x2d, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'cmp eax', 'Opcode' => 0x3d, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push', 'Opcode' => 0x68, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push', 'Opcode' => 0x6a, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jo', 'Opcode' => 0x70, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jno', 'Opcode' => 0x71, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jb', 'Opcode' => 0x72, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jnb', 'Opcode' => 0x73, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jz', 'Opcode' => 0x74, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jnz', 'Opcode' => 0x75, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jbe', 'Opcode' => 0x76, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'ja', 'Opcode' => 0x77, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'js', 'Opcode' => 0x78, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jns', 'Opcode' => 0x79, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jp', 'Opcode' => 0x7a, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jnp', 'Opcode' => 0x7b, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jl', 'Opcode' => 0x7c, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jnl', 'Opcode' => 0x7d, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jle', 'Opcode' => 0x7e, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jnle', 'Opcode' => 0x7f, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'mov eax', 'Opcode' => 0xa1, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'mov eax', 'Opcode' => 0xa3, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'mov eax', 'Opcode' => 0xb8, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'mov ecx', 'Opcode' => 0xb9, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'mov edx', 'Opcode' => 0xba, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'mov ebx', 'Opcode' => 0xbb, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'mov esp', 'Opcode' => 0xbc, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'mov ebp', 'Opcode' => 0xbd, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'mov esi', 'Opcode' => 0xbe, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'mov edi', 'Opcode' => 0xbf, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'retn', 'Opcode' => 0xc2, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'retf', 'Opcode' => 0xca, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'int', 'Opcode' => 0xcd, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'aam', 'Opcode' => 0xd4, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'aad', 'Opcode' => 0xd5, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'loopnz', 'Opcode' => 0xe0, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'loopz', 'Opcode' => 0xe1, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'loop', 'Opcode' => 0xe2, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jcxz', 'Opcode' => 0xe3, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'in eax', 'Opcode' => 0xe5, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'out eax', 'Opcode' => 0xe7, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'call', 'Opcode' => 0xe8, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jmp', 'Opcode' => 0xe9, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jmp', 'Opcode' => 0xea, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'jmp', 'Opcode' => 0xeb, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'mov eax', 'Opcode' => 0xb8, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'add eax', 'Opcode' => 0x05, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'adc eax', 'Opcode' => 0x14, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'or eax', 'Opcode' => 0x0d, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'and eax', 'Opcode' => 0x25, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'xor eax', 'Opcode' => 0x35, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'sbb eax', 'Opcode' => 0x1d, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'sub eax', 'Opcode' => 0x2d, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'cmp eax', 'Opcode' => 0x3d, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'push', 'Opcode' => 0x68, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push', 'Opcode' => 0x6a, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jo', 'Opcode' => 0x70, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jno', 'Opcode' => 0x71, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jb', 'Opcode' => 0x72, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jnb', 'Opcode' => 0x73, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jz', 'Opcode' => 0x74, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jnz', 'Opcode' => 0x75, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jbe', 'Opcode' => 0x76, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'ja', 'Opcode' => 0x77, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'js', 'Opcode' => 0x78, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jns', 'Opcode' => 0x79, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jp', 'Opcode' => 0x7a, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jnp', 'Opcode' => 0x7b, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jl', 'Opcode' => 0x7c, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jnl', 'Opcode' => 0x7d, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jle', 'Opcode' => 0x7e, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jnle', 'Opcode' => 0x7f, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'mov eax', 'Opcode' => 0xa1, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'mov eax', 'Opcode' => 0xa3, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'mov eax', 'Opcode' => 0xb8, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'mov ecx', 'Opcode' => 0xb9, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'mov edx', 'Opcode' => 0xba, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'mov ebx', 'Opcode' => 0xbb, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'mov esp', 'Opcode' => 0xbc, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'mov ebp', 'Opcode' => 0xbd, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'mov esi', 'Opcode' => 0xbe, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'mov edi', 'Opcode' => 0xbf, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'retn', 'Opcode' => 0xc2, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'retf', 'Opcode' => 0xca, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'int', 'Opcode' => 0xcd, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'aam', 'Opcode' => 0xd4, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'aad', 'Opcode' => 0xd5, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'loopnz', 'Opcode' => 0xe0, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'loopz', 'Opcode' => 0xe1, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'loop', 'Opcode' => 0xe2, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jcxz', 'Opcode' => 0xe3, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'in eax', 'Opcode' => 0xe5, 'r_mod' => 0x0, "src" => 0x1}, # MOD R/M disable
+            {'Instruction' => 'out eax', 'Opcode' => 0xe7, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'call', 'Opcode' => 0xe8, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jmp', 'Opcode' => 0xe9, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jmp', 'Opcode' => 0xea, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'jmp', 'Opcode' => 0xeb, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
                 # [ LENGTH 1 ]
-            {'Instruction' => 'push ebp', 'Opcode' => 0x55, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'retn', 'Opcode' => 0xc3, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'leave', 'Opcode' => 0xc9, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push es', 'Opcode' => 0x06, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push ss', 'Opcode' => 0x16, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'pop es', 'Opcode' => 0x07, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'pop ss', 'Opcode' => 0x17, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push cs', 'Opcode' => 0x0e, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push ds', 'Opcode' => 0x1e, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'pop ds', 'Opcode' => 0x1f, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'inc eax', 'Opcode' => 0x40, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'inc ecx', 'Opcode' => 0x41, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'inc edx', 'Opcode' => 0x42, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'inc ebx', 'Opcode' => 0x43, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'inc esp', 'Opcode' => 0x44, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'inc ebp', 'Opcode' => 0x45, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'inc esi', 'Opcode' => 0x46, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'inc edi', 'Opcode' => 0x47, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'dec eax', 'Opcode' => 0x48, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'dec ecx', 'Opcode' => 0x49, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'dec edx', 'Opcode' => 0x4a, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'dec ebx', 'Opcode' => 0x4b, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'dec esp', 'Opcode' => 0x4c, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'dec ebp', 'Opcode' => 0x4d, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'dec esi', 'Opcode' => 0x4e, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'dec edi', 'Opcode' => 0x4f, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push eax', 'Opcode' => 0x50, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push ecx', 'Opcode' => 0x51, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push edx', 'Opcode' => 0x52, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push ebx', 'Opcode' => 0x53, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push esp', 'Opcode' => 0x54, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push ebp', 'Opcode' => 0x55, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push esi', 'Opcode' => 0x56, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'push edi', 'Opcode' => 0x57, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'pop eax', 'Opcode' => 0x58, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'pop ecx', 'Opcode' => 0x59, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'pop edx', 'Opcode' => 0x5a, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'pop ebx', 'Opcode' => 0x5b, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'pop esp', 'Opcode' => 0x5c, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'pop ebp', 'Opcode' => 0x5d, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'pop esi', 'Opcode' => 0x5e, 'r_mod' => 0x0}, # MOD R/M disable
-            {'Instruction' => 'pop edi', 'Opcode' => 0x5f, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push ebp', 'Opcode' => 0x55, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'retn', 'Opcode' => 0xc3, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'leave', 'Opcode' => 0xc9, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push es', 'Opcode' => 0x06, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push ss', 'Opcode' => 0x16, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop es', 'Opcode' => 0x07, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop ss', 'Opcode' => 0x17, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push cs', 'Opcode' => 0x0e, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push ds', 'Opcode' => 0x1e, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop ds', 'Opcode' => 0x1f, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc eax', 'Opcode' => 0x40, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc ecx', 'Opcode' => 0x41, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc edx', 'Opcode' => 0x42, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc ebx', 'Opcode' => 0x43, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc esp', 'Opcode' => 0x44, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc ebp', 'Opcode' => 0x45, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc esi', 'Opcode' => 0x46, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc edi', 'Opcode' => 0x47, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec eax', 'Opcode' => 0x48, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec ecx', 'Opcode' => 0x49, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec edx', 'Opcode' => 0x4a, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec ebx', 'Opcode' => 0x4b, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec esp', 'Opcode' => 0x4c, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec ebp', 'Opcode' => 0x4d, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec esi', 'Opcode' => 0x4e, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec edi', 'Opcode' => 0x4f, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push eax', 'Opcode' => 0x50, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push ecx', 'Opcode' => 0x51, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push edx', 'Opcode' => 0x52, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push ebx', 'Opcode' => 0x53, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push esp', 'Opcode' => 0x54, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push ebp', 'Opcode' => 0x55, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push esi', 'Opcode' => 0x56, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push edi', 'Opcode' => 0x57, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop eax', 'Opcode' => 0x58, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop ecx', 'Opcode' => 0x59, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop edx', 'Opcode' => 0x5a, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop ebx', 'Opcode' => 0x5b, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop esp', 'Opcode' => 0x5c, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop ebp', 'Opcode' => 0x5d, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop esi', 'Opcode' => 0x5e, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop edi', 'Opcode' => 0x5f, 'r_mod' => 0x0, "src" => 0x0}, # MOD R/M disable
 
         ]
         
@@ -316,9 +316,6 @@ class OpcodeDecode
                 {0x7d => {'REG' => 'edi', "R/M" => "ebp"}},
                 {0x7e => {'REG' => 'edi', "R/M" => "esi"}},
                 {0x7f => {'REG' => 'edi', "R/M" => "edi"}},
-                
-
-
             ]
 =begin
             00 => [
@@ -333,7 +330,7 @@ class OpcodeDecode
 
     public
 
-    def initialize(opcode_array, iarch=32)
+    def initialize(opcode_array, iarch=32) # OpcodeDecode.new(param1, param21)
         @opcode_array = opcode_array
         @iarch = iarch
     end
@@ -361,7 +358,7 @@ class OpcodeDecode
             column_opcode_instruction = get_column_opcode(@opcode_array[0])
             opcode = column_opcode_instruction['Instruction']
             if column_opcode_instruction['r_mod'] == 0x1
-                dbit = get_d_bit(@opcode_array[0])
+                dbit = get_d_bit(@opcode_array[0]) # 89 e5
                 mod_value = get_mod(@opcode_array[1])
                 regex_field_rm = get_field_rm(dbit, mod_value)
                 
@@ -376,7 +373,11 @@ class OpcodeDecode
                 if @opcode_array.length == 1
                     return column_opcode_instruction['Instruction']
                 else
-                    return "#{column_opcode_instruction['Instruction']}, %x" % @opcode_array[1]
+                    if column_opcode_instruction['src'] == 0x1
+                        return "#{column_opcode_instruction['Instruction']}, %x" % @opcode_array[1]
+                    else
+                        return "#{column_opcode_instruction["Instruction"]} %x" % @opcode_array[1..-1].join
+                    end
                 end
             end
         end
