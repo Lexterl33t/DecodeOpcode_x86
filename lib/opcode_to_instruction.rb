@@ -131,6 +131,45 @@ class OpcodeDecode
             {'Instruction' => 'push ebp', 'Opcode' => 0x55, 'r_mod' => 0x0}, # MOD R/M disable
             {'Instruction' => 'retn', 'Opcode' => 0xc3, 'r_mod' => 0x0}, # MOD R/M disable
             {'Instruction' => 'leave', 'Opcode' => 0xc9, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push es', 'Opcode' => 0x06, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push ss', 'Opcode' => 0x16, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop es', 'Opcode' => 0x07, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop ss', 'Opcode' => 0x17, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push cs', 'Opcode' => 0x0e, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push ds', 'Opcode' => 0x1e, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop ds', 'Opcode' => 0x1f, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc eax', 'Opcode' => 0x40, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc ecx', 'Opcode' => 0x41, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc edx', 'Opcode' => 0x42, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc ebx', 'Opcode' => 0x43, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc esp', 'Opcode' => 0x44, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc ebp', 'Opcode' => 0x45, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc esi', 'Opcode' => 0x46, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'inc edi', 'Opcode' => 0x47, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec eax', 'Opcode' => 0x48, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec ecx', 'Opcode' => 0x49, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec edx', 'Opcode' => 0x4a, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec ebx', 'Opcode' => 0x4b, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec esp', 'Opcode' => 0x4c, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec ebp', 'Opcode' => 0x4d, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec esi', 'Opcode' => 0x4e, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'dec edi', 'Opcode' => 0x4f, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push eax', 'Opcode' => 0x50, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push ecx', 'Opcode' => 0x51, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push edx', 'Opcode' => 0x52, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push ebx', 'Opcode' => 0x53, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push esp', 'Opcode' => 0x54, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push ebp', 'Opcode' => 0x55, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push esi', 'Opcode' => 0x56, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'push edi', 'Opcode' => 0x57, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop eax', 'Opcode' => 0x58, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop ecx', 'Opcode' => 0x59, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop edx', 'Opcode' => 0x5a, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop ebx', 'Opcode' => 0x5b, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop esp', 'Opcode' => 0x5c, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop ebp', 'Opcode' => 0x5d, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop esi', 'Opcode' => 0x5e, 'r_mod' => 0x0}, # MOD R/M disable
+            {'Instruction' => 'pop edi', 'Opcode' => 0x5f, 'r_mod' => 0x0}, # MOD R/M disable
 
         ]
         
