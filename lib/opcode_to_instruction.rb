@@ -250,14 +250,81 @@ class OpcodeDecode
                 {0xfd => {'REG' => "edi", "R/M" => "ebp"}},
                 {0xfe => {'REG' => "edi", "R/M" => "esi"}},
                 {0xff => {'REG' => "edi", "R/M" => "edi"}},
+            ],
+            0b01 => [
+                # EAX
+                {0x40 => {'REG' => 'eax', "R/M" => "eax"}},
+                {0x41 => {'REG' => 'eax', "R/M" => "ecx"}},
+                {0x42 => {'REG' => 'eax', "R/M" => "edx"}},
+                {0x43 => {'REG' => 'eax', "R/M" => "ebx"}},
+                {0x45 => {'REG' => 'eax', "R/M" => "ebp"}},
+                {0x46 => {'REG' => 'eax', "R/M" => "esi"}},
+                {0x47 => {'REG' => 'eax', "R/M" => "edi"}},
+                # ECX
+                {0x48 => {'REG' => 'ecx', "R/M" => "eax"}},
+                {0x49 => {'REG' => 'ecx', "R/M" => "ecx"}},
+                {0x4a => {'REG' => 'ecx', "R/M" => "edx"}},
+                {0x4b => {'REG' => 'ecx', "R/M" => "ebx"}},
+                {0x4d => {'REG' => 'ecx', "R/M" => "ebp"}},
+                {0x4e => {'REG' => 'ecx', "R/M" => "esi"}},
+                {0x4f => {'REG' => 'ecx', "R/M" => "edi"}},
+                # EDX
+                {0x50 => {'REG' => 'edx', "R/M" => "eax"}},
+                {0x51 => {'REG' => 'edx', "R/M" => "ecx"}},
+                {0x52 => {'REG' => 'edx', "R/M" => "edx"}},
+                {0x53 => {'REG' => 'edx', "R/M" => "ebx"}},
+                {0x55 => {'REG' => 'edx', "R/M" => "ebp"}},
+                {0x56 => {'REG' => 'edx', "R/M" => "esi"}},
+                {0x57 => {'REG' => 'edx', "R/M" => "edi"}},
+                # EBX
+                {0x58 => {'REG' => 'ebx', "R/M" => "eax"}},
+                {0x59 => {'REG' => 'ebx', "R/M" => "ecx"}},
+                {0x5a => {'REG' => 'ebx', "R/M" => "edx"}},
+                {0x5b => {'REG' => 'ebx', "R/M" => "ebx"}},
+                {0x5d => {'REG' => 'ebx', "R/M" => "ebp"}},
+                {0x5e => {'REG' => 'ebx', "R/M" => "esi"}},
+                {0x5f => {'REG' => 'ebx', "R/M" => "edi"}},
+                # ESP
+                {0x60 => {'REG' => 'esp', "R/M" => "eax"}},
+                {0x61 => {'REG' => 'esp', "R/M" => "ecx"}},
+                {0x62 => {'REG' => 'esp', "R/M" => "edx"}},
+                {0x63 => {'REG' => 'esp', "R/M" => "ebx"}},
+                {0x65 => {'REG' => 'esp', "R/M" => "ebp"}},
+                {0x66 => {'REG' => 'esp', "R/M" => "esi"}},
+                {0x67 => {'REG' => 'esp', "R/M" => "edi"}},
+                # ESP
+                {0x68 => {'REG' => 'ebp', "R/M" => "eax"}},
+                {0x69 => {'REG' => 'ebp', "R/M" => "ecx"}},
+                {0x6a => {'REG' => 'ebp', "R/M" => "edx"}},
+                {0x6b => {'REG' => 'ebp', "R/M" => "ebx"}},
+                {0x6d => {'REG' => 'ebp', "R/M" => "ebp"}},
+                {0x6e => {'REG' => 'ebp', "R/M" => "esi"}},
+                {0x6f => {'REG' => 'ebp', "R/M" => "edi"}},
+                # ESI
+                {0x70 => {'REG' => 'esi', "R/M" => "eax"}},
+                {0x71 => {'REG' => 'esi', "R/M" => "ecx"}},
+                {0x72 => {'REG' => 'esi', "R/M" => "edx"}},
+                {0x73 => {'REG' => 'esi', "R/M" => "ebx"}},
+                {0x75 => {'REG' => 'esi', "R/M" => "ebp"}},
+                {0x76 => {'REG' => 'esi', "R/M" => "esi"}},
+                {0x77 => {'REG' => 'esi', "R/M" => "edi"}},
+                # EDI
+                {0x78 => {'REG' => 'edi', "R/M" => "eax"}},
+                {0x79 => {'REG' => 'edi', "R/M" => "ecx"}},
+                {0x7a => {'REG' => 'edi', "R/M" => "edx"}},
+                {0x7b => {'REG' => 'edi', "R/M" => "ebx"}},
+                {0x7d => {'REG' => 'edi', "R/M" => "ebp"}},
+                {0x7e => {'REG' => 'edi', "R/M" => "esi"}},
+                {0x7f => {'REG' => 'edi', "R/M" => "edi"}},
+                
+
+
             ]
 =begin
             00 => [
 
             ],
-            01 => [
-
-            ],
+            
             10 => [
 
             ]
@@ -295,11 +362,15 @@ class OpcodeDecode
             opcode = column_opcode_instruction['Instruction']
             if column_opcode_instruction['r_mod'] == 0x1
                 dbit = get_d_bit(@opcode_array[0])
-                regex_field_rm = get_field_rm(dbit)
                 mod_value = get_mod(@opcode_array[1])
+                regex_field_rm = get_field_rm(dbit, mod_value)
+                
                 regex_field_rm["%MOD%"] = opcode
                 regex_field_rm["%R/M%"] = get_column_mode(mod_value, @opcode_array[1])['R/M']
                 regex_field_rm["%REG%"] = get_column_mode(mod_value, @opcode_array[1])['REG']
+                if mod_value == 0b01
+                    regex_field_rm["%BYTE%"] = "%x" % @opcode_array[2]
+                end
                 return regex_field_rm
             else
                 if @opcode_array.length == 1
@@ -319,8 +390,12 @@ class OpcodeDecode
         ((opcode << 6) & 0xFF) >> 7
     end
 
-    def get_field_rm(dbit)
-        dbit == 0 ? "%MOD% %R/M%, %REG%" : dbit == 1 ? "%MOD% %REG%, %R/M%" : "INVALID OPCODE"
+    def get_field_rm(dbit, mod_value)
+        if mod_value == 0b11
+            dbit == 0 ? "%MOD% %R/M%, %REG%" : dbit == 1 ? "%MOD% %REG%, %R/M%" : "INVALID OPCODE"
+        elsif mod_value == 0b01
+            dbit == 0 ? "%MOD% %R/M%, [%REG%+%BYTE%]" : dbit == 1 ? "%MOD% %REG%, [%R/M%+%BYTE%]" : "INVALID OPCODE"
+        end 
     end
 end 
 
