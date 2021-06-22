@@ -395,7 +395,7 @@ class OpcodeDecode
         if mod_value == 0b11
             dbit == 0 ? "%MOD% %R/M%, %REG%" : dbit == 1 ? "%MOD% %REG%, %R/M%" : "INVALID OPCODE"
         elsif mod_value == 0b01
-            dbit == 0 ? "%MOD% %R/M%, [%REG%+%BYTE%]" : dbit == 1 ? "%MOD% %REG%, [%R/M%+%BYTE%]" : "INVALID OPCODE"
+            dbit == 0 ? "%MOD% %R/M%, [%REG%+%BYTE%]" : dbit == 1 ? "%MOD% %REG%, [%R/M%+0x%BYTE%]" : "INVALID OPCODE"
         end 
     end
 end 
